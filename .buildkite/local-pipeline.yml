@@ -1,0 +1,10 @@
+steps:
+  - label: "Test"
+    command: npm run build
+    plugins:
+      - improbable-eng/metahook:
+          pre-command: |
+            echo "pre-command hook"
+            echo "with two commands"
+          post-command: echo "post-command hook"
+          pre-exit: echo "pre-exit hook"
